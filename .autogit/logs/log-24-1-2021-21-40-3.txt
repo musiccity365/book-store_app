@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Wed Feb 24 2021 21:40:03 GMT-0500 (Eastern Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/controllers/books_controller.rb
+* app/controllers/ratings_controller.rb
+* app/controllers/users_controller.rb
+
+
+Created files:
+* .autogit/logs/log-24-1-2021-21-2-31.txt
+
+
+Deleted files:
+
+
+Renamed files:
