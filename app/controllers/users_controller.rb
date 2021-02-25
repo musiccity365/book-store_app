@@ -19,6 +19,17 @@ class UsersController < ApplicationController
     end
   end
   
+  def update
+    @rating = Rating.find(params[:id])
+      if @rating.update_attributes(params[:rating])
+        flash[:success] = "Rating was successfully updated"
+        redirect_to @rating
+      else
+        flash[:error] = "Something went wrong"
+        render 'edit'
+      end
+  end
+  
 
 
 
