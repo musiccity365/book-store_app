@@ -1,0 +1,25 @@
+-------------------- Auto-Git Log --------------------
+		Wed Feb 24 2021 19:57:13 GMT-0500 (Eastern Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/controllers/users_controller.rb
+* db/schema.rb
+
+
+Created files:
+* .autogit/logs/log-24-1-2021-18-50-22.txt
+* app/assets/stylesheets/ratings.scss
+* app/controllers/ratings_controller.rb
+* app/helpers/ratings_helper.rb
+* app/models/rating.rb
+* db/migrate/20210224235319_create_ratings.rb
+* test/controllers/ratings_controller_test.rb
+* test/fixtures/ratings.yml
+* test/models/rating_test.rb
+
+
+Deleted files:
+
+
+Renamed files:
