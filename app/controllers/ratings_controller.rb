@@ -4,9 +4,9 @@ class RatingsController < ApplicationController
   end
 
   def new
-    @rating = Rating.new
+    @rating = Rating.new(user_id)
   end
-  
+
   def create
     @rating = Rating.new(params[:rating])
     if @rating.save

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_235319) do
     t.string "title"
     t.string "author"
     t.string "publisher"
-    t.string "category"
+    t.string "genre"
     t.string "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_235319) do
     t.string "name"
     t.string "username"
     t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
