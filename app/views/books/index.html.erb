@@ -1,7 +1,19 @@
-<h1>Books Index</h1>
+<h1> Books</h1>
 
-<ul>
-<% @books.each do |book| %>
-  <li><%= book.title_and_rating %></li>
+<%= form_for @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :author %>
+  <%= f.text_field :author %><br>
+  <%= f.label :publisher %>
+  <%= f.text_field :publisher %><br>
+  <%= f.label :genre %>
+  <%= f.text_field :genre %><br>
+  <%= f.label :score %>
+  <%= f.text_field :score %><br>
+  <%= f.label :release_year %>
+  <%= f.text_field :release_year %><br>
+  <%= f.submit %>
+  
 <% end %>
-</ul>
+
