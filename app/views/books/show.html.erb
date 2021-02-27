@@ -1,5 +1,18 @@
 <h1>Books Show</h1>
 
-Title: <%= @book.title %>
-Author <%= @book.author %>
+Title: <%= @book.title %> <br>
+
+Author: <%= @book.author %><br>
+
+Publisher: <%= @book.publisher %><br>
+
+Genre: <%= @book.genre %><br>
+
+Score: <%= @book.score %><br>
+
+Released: <%= @book.release_year %>
+
+<%= link_to  ("Edit Books", edit_book_path(@book.id)) %>
+<%= link_to  ("Delete Books", edit_book_path(@book.id)) %>
+
 
