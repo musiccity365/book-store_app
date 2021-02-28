@@ -1,17 +1,33 @@
-<h1>Books Show</h1>
+<%= form_for @book do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :author %>
+  <%= f.text_field :author %><br>
+  <%= f.label :publisher %>
+  <%= f.text_field :publisher %><br>
+  <%= f.label :genre %>
+  <%= f.text_field :genre %><br>
+  <%= f.label :score %>
+  <%= f.text_field :score %><br>
+  <%= f.label :release_year %>
+  <%= f.text_field :release_year %><br>
+  <%= f.submit %>
 
-Title: <%= @book.title %> <br>
+<% end %>
+# <h1>Books Show</h1>
 
-Author: <%= @book.author %><br>
+# Title: <%= @book.title %> <br>
 
-Publisher: <%= @book.publisher %><br>
+# Author: <%= @book.author %><br>
 
-Genre: <%= @book.genre %><br>
+# Publisher: <%= @book.publisher %><br>
 
-Score: <%= @book.score %><br>
+# Genre: <%= @book.genre %><br>
 
-Released: <%= @book.release_year %>
+# Score: <%= @book.score %><br>
 
-<%= link_to  ("Edit Books", edit_book_path(@book.id)) %>
+# Released: <%= @book.release_year %>
+
+# <%= link_to  ("Edit Books", edit_book_path(@book.id)) %>
 
 
