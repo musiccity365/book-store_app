@@ -1,11 +1,9 @@
 class Book < ApplicationRecord
   has_many :ratings
   has_many :users, through: :ratings
-  validates :title, presence: true
-  validates :author, presence: true
-  validates :publisher, presence: true
-  validates :genre, presence: true
-  
+  validates :title, :author, :publisher, :genre, :score, :release_year, presence: true
+  # validates
+
   # def book_list # helper_method :book_list
   #   "#{self.title} - #{self.release_year}"
   # end
