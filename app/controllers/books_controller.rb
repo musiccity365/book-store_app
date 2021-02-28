@@ -13,7 +13,7 @@ class BooksController < ApplicationController
   end
   
   def index
-    @book = Book.all
+    @books = Book.ordered_by_release_date
   end
 
   def show

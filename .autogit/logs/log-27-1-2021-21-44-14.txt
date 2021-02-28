@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Sat Feb 27 2021 21:44:14 GMT-0500 (Eastern Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/models/book.rb
+* app/models/user.rb
+* app/views/books/index.html.erb
+
+
+Created files:
+* .autogit/logs/log-27-1-2021-21-13-8.txt
+
+
+Deleted files:
+
+
+Renamed files:
