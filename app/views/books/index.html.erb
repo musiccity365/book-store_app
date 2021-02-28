@@ -2,10 +2,9 @@
 
 <%= form_for (@books) do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %><br><br>
+<%= f.text_field :title %><br><br>
+<%= f.label :release_year %><br />
+<%= f.text_field :release_year %>
 
-  <%= f.label :release_year %><br />
-  <%= f.text_field :release_year %>
-
-
+<%= f.submit %>
 <% end %>
