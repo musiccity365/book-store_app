@@ -19,13 +19,13 @@ Book.create(
 
   User.create(
       [
-        {name: , username: , email: , password: },
-        {name: , username: , email: , password: }
-        {name: , username: , email: , password: }
+        {name: "bob", username: "bob123", email: "bob123@hotmail.com"},
+        {name: "sam", username: "sam432", email: "sam432@yahoo.com"},
+        {name: "grace", username: "grace50", email: "gracey@optonline.net"}
       ]
     )
-  Rating.create(
-      [
-        {comment: , score: , book_id: , user_id: }
-      ]
-  )
+  # Rating.create(
+  #     [
+  #       {comment: , score: , book_id: , user_id: }
+  #     ]
+  # )

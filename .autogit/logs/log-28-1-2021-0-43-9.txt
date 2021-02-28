@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Sun Feb 28 2021 00:43:09 GMT-0500 (Eastern Standard Time)
+------------------------------------------------------
+
+Modified files:
+* db/schema.rb
+
+
+Created files:
+* db/migrate/20210228052537_remove_score_from_books.rb
+* db/migrate/20210228053243_add_score_to_ratings.rb
+
+
+Deleted files:
+* db/migrate/20210224235319_create_ratings.rb
+
+
+Renamed files:
