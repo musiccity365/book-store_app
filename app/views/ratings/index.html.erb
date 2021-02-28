@@ -1,1 +1,20 @@
-<h1>List of ratings</h1>
+<h1>All Ratings</h1>
+
+<ul>
+<% @ratings.each do |rating| %>
+  <%= link_to (rating.comment, rating_path(score.id)) %>
+<% end %>
+</ul>
+
+<% if @rating.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+    <ul>
+      <% @rating.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= link_to ('New Rating', new_rating_path) %>
