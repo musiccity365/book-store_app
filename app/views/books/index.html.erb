@@ -1,7 +1,11 @@
-<h1> Books </h1>
+<h1> Books Index </h1>
 
-<%= form_for @books.each do |f| %>
-  
-  
+<%= form_for (@books) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br><br>
+
+  <%= f.label :release_year %><br />
+  <%= f.text_field :release_year %>
+
+
 <% end %>
-

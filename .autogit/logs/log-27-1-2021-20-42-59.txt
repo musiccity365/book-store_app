@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Sat Feb 27 2021 20:42:59 GMT-0500 (Eastern Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/controllers/books_controller.rb
+* config/routes.rb
+
+
+Created files:
+* .autogit/logs/log-27-1-2021-20-12-50.txt
+
+
+Deleted files:
+
+
+Renamed files:
