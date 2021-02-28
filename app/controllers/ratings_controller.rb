@@ -1,7 +1,14 @@
 class RatingsController < ApplicationController
+  def index
+    @rating = Rating.all
+  end
+
+  def show
+    @rating = Rating.find(params[:id])
+  end
 
   def new
-    @rating = Rating.new(user_id)
+    @rating = Rating.new
   end
 
   def create
@@ -11,14 +18,6 @@ class RatingsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def index
-    @rating = Rating.all
-  end
-
-  def show
-    @rating = Rating.find(params[:id])
   end
 
   def edit
@@ -42,4 +41,5 @@ class RatingsController < ApplicationController
   def rating_params
     params.require(:rating).permit(:comment, :score, :book_id, :user_id)
   end
+
 end
