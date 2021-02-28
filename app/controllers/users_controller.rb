@@ -13,10 +13,10 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_path)
     if @user.save
       flash[:success] = "User successfully created"
-      redirect_to @user
+      redirect_to users_path(@user)
     else
       flash[:error] = "Something went wrong"
       render :new
@@ -26,6 +26,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:email)
+      params.require(:user).permit(:name, :email, :username, :password)
     end
 end
