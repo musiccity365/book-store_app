@@ -1,5 +1,19 @@
 <h1>Home Page</h1>
-<%= link_to "Sign Up Here", signup_path %>
+<% if flash[:message] %>
+    <p style="color: red"> <%= flash[:message]  %> </p>
+<% end %>
+
+
 <p>
-<%= link_to "Login Here", '/login' %>
-</p>
+<% if !current_user %>
+    <%= link_to "Sign Up", signup_path %>
+    <p>
+    <%= link_to "Login", '/login' %>
+    <p>
+    <%= button_to("Log In with Github", '/auth/github')%>
+<% else %>
+    <%= link_to "All Ratings", ratings_path %>
+    <p>
+    <%= link_to "All Books", books_path %>
+    <p>
+<% end %>

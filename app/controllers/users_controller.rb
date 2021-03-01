@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    render :login
   end
 
-
   def new
-    @user = User.new
+    redirect_to '/signup'
   end
 
   def create
