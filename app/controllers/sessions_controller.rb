@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
-      flash[:message] = "Incorrect credentials, please try again"
+      flash[:message] = "Incorrect credentials, please try again!"
       redirect_to "/login"
     end
   end
@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to user_path(user)
       else
-          flash[:message] = "Something went wrong, please try again!"
+          flash[:message] = "Error, please try again!"
           redirect_to '/'
       end
   end
