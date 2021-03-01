@@ -1,18 +1,14 @@
 class UsersController < ApplicationController
 
-  def index
-    render :login
-  end
-
   def new
-    redirect_to '/signup'
+    @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user_id
-      redirect_to users_path(@user)
+      redirect_to @user
     else
       render :new
     end
@@ -26,6 +22,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :email, :password)
     end
 end

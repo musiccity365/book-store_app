@@ -8,11 +8,6 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def new
-    redirect_to users_path
-  end
-
-
   def create
     user = User.find_by(username: params[:user][:username])
     if user && user.authenticate(params[:user][:password])
@@ -45,6 +40,5 @@ class SessionsController < ApplicationController
   def auth
       request.env['omniauth.auth']
   end
-
 
 end
