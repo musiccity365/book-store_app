@@ -5,20 +5,21 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version - 2.7.2
 
-* System dependencies
+# Book-Store-app
+Book-Store-app is an app designed in rails that is designed for users to create an account and write their own personal reviews about any kind of books they desire. Signing up is easy, all you need is an email address, username, and password. We've also added signup functionality via github. 
 
-* Configuration
+## Installation
 
-* Database creation
+bundle install
 
-* Database initialization
+## Usage
 
-* How to run the test suite
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Services (job queues, cache servers, search engines, etc.)
+Please make sure to update tests as appropriate.
 
-* Deployment instructions
-
-* ...
+## License
+https://github.com/musiccity365/book-store_app/blob/main/LICENSE
