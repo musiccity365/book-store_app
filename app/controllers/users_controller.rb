@@ -1,30 +1,32 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.all
+    @users = User.all
   end
-  
-  def show
-    @user = User.find(params[:id])
-  end
+
 
   def new
     @user = User.new
   end
-  
+
   def create
-    @user = User.new(user_path)
+    @user = User.new(user_params)
     if @user.save
-      flash[:success] = "User successfully created"
+      session[:user_id] = @user_id
       redirect_to users_path(@user)
     else
-      flash[:error] = "Something went wrong"
       render :new
     end
   end
 
+  def show
+    redirect_if_not_logged_in
+    @user = User.find_by_id(params[:id])
+    redirect_to '/' if !@user
+  end
+
   private
     def user_params
-      params.require(:user).permit(:name, :email, :username, :password)
+      params.require(:user).permit(:username, :password)
     end
 end

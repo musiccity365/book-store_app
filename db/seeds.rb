@@ -19,9 +19,9 @@ Book.create(
 
   User.create(
       [
-        {name: "bob", username: "bob123", email: "bob123@hotmail.com"},
-        {name: "sam", username: "sam432", email: "sam432@yahoo.com"},
-        {name: "grace", username: "grace50", email: "gracey@optonline.net"}
+        {name: "bob", username: "bob123", email: "bob123@hotmail.com", password: "password1"},
+        {name: "sam", username: "sam432", email: "sam432@yahoo.com", password: "password2"},
+        {name: "grace", username: "grace50", email: "gracey@optonline.net", password: "password3"}
       ]
     )
   # Rating.create(

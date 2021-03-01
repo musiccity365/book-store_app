@@ -1,40 +1,51 @@
 class RatingsController < ApplicationController
+  before_action :redirect_if_not_logged_in
 
   def index
     @rating = Rating.all
   end
 
+  def show
+    @rating = Rating.find_by_id(params[:id])
+  end
+
   def new
     @rating = Rating.new
+    @rating.build_book
   end
 
-  def show
-    @rating = Rating.find(params[:id])
-  end
 
-  def edit
-    @rating = Rating.find(params[:id])
-  end
 
   def create
-    @rating = Rating.new(rating_params)
-    if @rating.save
+    @rating = current_user.ratings.new(rating_params)
+    if @rating.valid?
+      @rating.save
       redirect_to ratings_path(@rating)
     else
       render :new
     end
   end
 
+  def edit
+    @rating = Rating.find(params[:id])
+  end
+
   def update
-    rating = Rating.find(params[:id])
-    rating.update(rating_params)
-    redirect_to ratings_path(rating)
+    if logged_in?
+      @rating = Rating.find(params[:id])
+      @rating.update(rating_params)
+      flash[:success] = "Updated!"
+      redirect_to ratings_path(@rating)
+    else
+      render action: :edit
+    end
   end
 
   def destroy
-    rating = Rating.find(params[:id])
-    rating.destroy(rating_params)
+    @rating = current_user.ratings.find(params[:id])
+    @rating.destroy
     redirect_to ratings_path
+    flash[:notice] = "Deleted!"
   end
 
   private

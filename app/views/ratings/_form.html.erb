@@ -1,0 +1,24 @@
+<%= form_for(@rating) do |f| %>
+<%= f.fields_for :book do |book_field| %>
+  <%= book_field.label "book title:" %>
+  <%= book_field.text_field :title %>
+  # <p>
+  # <%= book_field.collection_select :category_id, Category.all, :id, :title, prompt: "Select a Category" %>
+<% end %>
+<br>
+
+  <%= f.label "Rating Title:"%>
+  <%= f.text_field :title %>
+
+  <%= f.label "Rating Score:"%>
+  <%= f.number_field :score %><br>
+
+  <%= f.label "Content:" %>
+  <%= f.text_area :content %>
+  <br>
+
+
+    
+  </p>
+  <%= f.submit %>
+<% end %>

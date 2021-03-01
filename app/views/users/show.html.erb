@@ -1,1 +1,14 @@
-# render index
+<% @user.ratings.each do |rating| %>
+    <ul>
+        <li>
+            <h3><%= rating.title%></h3>
+            <br>
+            <%= rating.restaurant.name%>
+            <br>
+            <%= rating.content %>
+            <br>
+            <small><%= rating.timestamps %></small>
+        </li>
+        ----------------------------------------------
+    </ul>
+<% end %>

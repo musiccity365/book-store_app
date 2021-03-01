@@ -1,3 +1,14 @@
-<h1><%= @rating.comment %></h1>
+<h1><%= @rating.book.title %></h1>
 
-Rating comments
+<div>
+  <h3>By: <%= @rating.username %></h3>
+  <li><%= @rating.score %></li>
+  <p><%= @rating.content %></p>
+  <br>
+</div>
+
+
+<% if current_user == @rating.user %>
+    <%= link_to "Edit Rating", edit_rating_path(@rating) %> |
+    <%= link_to "Delete", @question, method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>

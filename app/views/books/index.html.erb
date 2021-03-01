@@ -1,12 +1,12 @@
 <h1> Books Index </h1>
 
 <% @books.each do |book| %>
-  <li>
-  <%= link_to book.title, book %>
-  <%= book.author %>
-  <%= book.publisher %>
-  <%= book.genre %>
-  <%= book.score %>
-  <%= book.release_year %>
-  <li>
+  <ol>
+    <%= link_to book.title, book %>
+    <%= book.author %>
+    <%= book.publisher %>
+    <%= book.genre %>
+    <%= book.score %>
+    <%= book.release_year %>
+  </ol>
 <% end %>
