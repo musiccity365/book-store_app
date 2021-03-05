@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2021_02_28_055148) do
     t.string "author"
     t.string "publisher"
     t.string "genre"
-    t.integer "score"
     t.integer "release_year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -26,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_055148) do
   create_table "ratings", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.integer "score"
     t.integer "user_id"
     t.integer "book_id"
     t.datetime "created_at", precision: 6, null: false

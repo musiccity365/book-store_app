@@ -2,7 +2,7 @@ class RatingsController < ApplicationController
   before_action :redirect_if_not_logged_in
 
   def index
-    @rating = Rating.all
+    @ratings = Rating.all
   end
 
   def show
@@ -10,18 +10,21 @@ class RatingsController < ApplicationController
   end
 
   def new
-    @rating = Rating.new
-    @rating.build_book
+    if params[:book_id] && @book = Book.find_by_id(params[:book_id])
+      @rating = @book.ratings.new
+    else
+      @books = Book.all
+      @rating = Rating.new
+    end
   end
 
-
-
   def create
-    @rating = current_user.ratings.new(rating_params)
-    if @rating.valid?
-      @rating.save
-      redirect_to ratings_path(@rating)
+    @rating = current_user.ratings.build(rating_params)
+    @rating.book_id = params[:book_id]
+    if @rating.save
+      redirect_to rating_path(@rating)
     else
+      @book = Book.find_by_id(params[:book_id]) if params[:book_id]
       render :new
     end
   end

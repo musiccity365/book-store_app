@@ -3,6 +3,7 @@ class CreateRatings < ActiveRecord::Migration[6.1]
     create_table :ratings do |t|
       t.string :title
       t.string :content
+      t.integer :score
       t.belongs_to :user, index: true, foreign_key: true
       t.belongs_to :book, index: true, foreign_key: true
 

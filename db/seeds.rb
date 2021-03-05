@@ -11,9 +11,9 @@ Rating.destroy_all
 
 Book.create(
     [
-      {title: "The Adventures of Huckleberry Finn", author: "Mark Twain", publisher: "Chatto & Windus / Charles L. Webster And Company", genre: "Picaresque novel", score: 10, release_year: 1884},
-      {title: "Goodnight Moon", author: "Margaret Wise Brown", publisher: "Harper & Brothers", genre: "Children's literature", score: 9, release_year: 1947},
-      {title: "The Fall of the House of Usher", author: "Edgar Allan Poe", publisher: "Burton's Gentleman's Magazine", genre: "Horror, Gothic", score: 8, release_year: 1839}
+      {title: "The Adventures of Huckleberry Finn", author: "Mark Twain", publisher: "Chatto & Windus / Charles L. Webster And Company", genre: "Picaresque novel", release_year: 1884},
+      {title: "Goodnight Moon", author: "Margaret Wise Brown", publisher: "Harper & Brothers", genre: "Children's literature", release_year: 1947},
+      {title: "The Fall of the House of Usher", author: "Edgar Allan Poe", publisher: "Burton's Gentleman's Magazine", genre: "Horror, Gothic", release_year: 1839}
     ]
 )
 

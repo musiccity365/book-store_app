@@ -21,11 +21,11 @@ Rails.application.routes.draw do
   resources :users
 
   resources :books do
-    resources :ratings, only: [:index, :show]
+    resources :ratings, only: [:index, :new, :create]
   end
   # resources :genres do
   #   resources :books, only: [:index]
   # end
-  resources :books, only: [:index, :show]
+  resources :books, only: [:index, :show, :new]
 
 end
