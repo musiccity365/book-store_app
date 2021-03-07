@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def new
     @book = Book.new
+    @book.ratings.build
   end
   
   def create
@@ -31,9 +32,9 @@ class BooksController < ApplicationController
   end
 
   private
-  
+
   def book_params
-    params.require(:book).permit(:title, :author, :publisher, :genre, :score, :release_year)
+    params.require(:book).permit(:title, :author, :publisher, :genre, :release_year)
   end
   
 end

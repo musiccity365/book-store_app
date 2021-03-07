@@ -1,18 +1,16 @@
 <%= form_for([@book, @rating]) do |f| %>
 <br>
-
+  <%= rating_form_header(f) %><br><br>
   <%= f.label "Rating Title:"%>
-  <%= f.text_field :title %>
+  <%= f.text_field :title %><br><br>
 
   <%= f.label "Rating Score:"%>
-  <%= f.number_field :score %><br>
+  <%= f.number_field :score %><br><br>
 
   <%= f.label "Content:" %>
-  <%= f.text_area :content %>
+  <p><%= f.text_area :content %></p>
   <br>
 
-
-    
   </p>
   <%= f.submit %>
 <% end %>

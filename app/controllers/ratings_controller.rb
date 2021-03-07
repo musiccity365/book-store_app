@@ -13,24 +13,28 @@ class RatingsController < ApplicationController
     if params[:book_id] && @book = Book.find_by_id(params[:book_id])
       @rating = @book.ratings.new
     else
-      @books = Book.all
+      @books = Book.book_list
       @rating = Rating.new
     end
   end
 
   def create
     @rating = current_user.ratings.build(rating_params)
-    @rating.book_id = params[:book_id]
+    @rating.book_id = params[:book_id] || @rating.book_id = params[:rating][:book_id]
     if @rating.save
       redirect_to rating_path(@rating)
     else
       @book = Book.find_by_id(params[:book_id]) if params[:book_id]
+      @books = Book.book_list
+      flash[:message] = @rating.errors.full_messages.join(", ")
+
       render :new
     end
   end
 
   def edit
     @rating = Rating.find(params[:id])
+    @books = Book.book_list
   end
 
   def update
@@ -54,7 +58,7 @@ class RatingsController < ApplicationController
   private
 
   def rating_params
-    params.require(:rating).permit(:comment, :score, :book_id, :user_id) # check later
+    params.require(:rating).permit(:title, :content, :score, :book_id, :user_id) # check later
   end
 
 end

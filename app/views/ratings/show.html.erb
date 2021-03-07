@@ -1,9 +1,10 @@
 <h1><%= @rating.book.title %></h1>
 
 <div>
-  <h3>By: <%= @rating.user.name %></h3>
-  <li><%= @rating.score %></li>
-  <p><%= @rating.content %></p>
+  By: <%= @rating.user.name %><br>
+  Title: <%= @rating.title %><br>
+  Score: <%= @rating.score %><br>
+  Content: <p><%= @rating.content %></p>
   <br>
 </div>
 

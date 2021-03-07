@@ -9,9 +9,15 @@ Publisher: <%= @book.publisher %><br>
 
 Genre: <%= @book.genre %><br>
 
-Score: <%= @book.score %><br>
+Released: <%= @book.release_year %><br><br>
 
-Released: <%= @book.release_year %>
+<%= link_to "Create New Rating", new_book_rating_path(@book) %>
+
+<% @book.ratings.each do |rating| %>
+  Title: <%= rating.title %><br>
+  Content: <%= rating.content %><br>
+  Score: <%= rating.score %><br><br>
+<% end %>
 
 
 

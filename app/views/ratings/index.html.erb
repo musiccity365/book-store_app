@@ -2,7 +2,7 @@
 
 <ul>
 <% @ratings.each do |rating| %>
-  <%= link_to rating.book.title, rating_path(rating.id) %>
+  <%= link_to rating.book.title, rating_path(rating.id) %><br>
 <% end %>
 </ul>
 
