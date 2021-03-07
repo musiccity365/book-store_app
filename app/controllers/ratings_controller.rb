@@ -1,5 +1,7 @@
 class RatingsController < ApplicationController
   before_action :redirect_if_not_logged_in
+  before_action :require_user_access, only: [:edit, :update, :destroy]
+  
 
   def index
     @ratings = Rating.all
@@ -59,6 +61,14 @@ class RatingsController < ApplicationController
 
   def rating_params
     params.require(:rating).permit(:title, :content, :score, :book_id, :user_id) # check later
+  end
+  
+  def require_user_access
+    rating = Rating.find_by(id: params[:id])
+    unless rating && current_user.id == rating.user_id
+      flash[:error] = "Sorry, Access Denied."
+      redirect_to user_path(current_user)
+    end
   end
 
 end

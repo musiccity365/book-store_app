@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only: [:new, :create, :home]
 
   def home
   end
@@ -19,26 +20,22 @@ class SessionsController < ApplicationController
     end
   end
 
-  def github
-      #find or create a user using the attributes auth
-      user = User.find_or_create_by(username: auth['info']['nickname']) do |u|
-          u.username = auth['info']['nickname']
-          u.password = SecureRandom.hex(10)
-      end
-
-      if user.save
-        session[:user_id] = user.id
-        redirect_to user_path(user)
-      else
-          flash[:message] = "Error, please try again!"
-          redirect_to '/'
-      end
+  def omniauth
+    #find or create a user using the attributes auth
+    user = User.create_from_omniauth(auth)
+    if user.valid?
+      session[:user_id] = user.id
+      redirect_to user_path(user)
+    else
+      flash[:message] = "Invalid Entry, please try again!"
+      redirect_to login_path
+    end
   end
 
   private
 
   def auth
-      request.env['omniauth.auth']
+    request.env['omniauth.auth']
   end
 
 end

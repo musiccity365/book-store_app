@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #omniauth callback route
+  match '/auth/github/callback', to: 'users#omniauth', via: [:get, :post]
   get 'sessions/home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #signup route
@@ -8,11 +10,9 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
-  #omniauth callback route
-  get '/auth/:provider/callback' => 'sessions#github'
 
   #logout route
-  delete '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
 
   #homepage route
   root "sessions#home"

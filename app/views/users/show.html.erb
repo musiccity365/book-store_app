@@ -1,3 +1,10 @@
+<h1>Welcome, <%= @user.name %></h1>
+
+Username: <%= @user.username %><br>
+Email: <%= @user.email %><br>
+
+Ratings: <%= @user.ratings.count %>
+
 <% @user.ratings.each do |rating| %>
     <ul>
         <li>
