@@ -13,11 +13,8 @@ Released: <%= @book.release_year %><br><br>
 
 <%= link_to "Create New Rating", new_book_rating_path(@book) %>
 
-<% @book.ratings.each do |rating| %>
-  Title: <%= rating.title %><br>
-  Content: <%= rating.content %><br>
-  Score: <%= rating.score %><br><br>
-<% end %>
+<%= link_to "View Ratings", book_ratings_path(@book) %>
+
 
 
 

@@ -6,9 +6,6 @@ class Book < ApplicationRecord
   validates :title, :author, :publisher, :release_year, presence: true
  
 
-  def rating_attributes=(attr)
-    binding.pry
-  end
   def self.book_list # helper_method :book_list
     @books = []
 
