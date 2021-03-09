@@ -8,9 +8,9 @@ Ratings: <%= @user.ratings.count %>
 <% @user.ratings.each do |rating| %>
     <ul>
         <li>
-            <h3><><%= rating.title%></h3>
+            <h3><%= rating.title %></h3>
             <br>
-            <%= rating.books.name%>
+            <%= rating.book.title %>
             <br>
             <%= rating.content %>
             <br>

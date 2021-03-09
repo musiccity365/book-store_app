@@ -1,0 +1,169 @@
+
+app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer1,0
+
+app/models/book.rb,434
+class Book < ApplicationRecordBook1,0
+  has_many :ratingsratings2,0
+  has_many :ratingsratings=2,0
+  has_many :ratingsrating_ids2,0
+  has_many :ratingsrating_ids=2,0
+  has_many :users, through: :ratingsusers3,0
+  has_many :users, through: :ratingsusers=3,0
+  has_many :users, through: :ratingsuser_ids3,0
+  has_many :users, through: :ratingsuser_ids=3,0
+  def self.book_list # helper_method :book_listbook_list8,0
+
+app/models/rating.rb,441
+class Rating < ApplicationRecordRating1,0
+  belongs_to :useruser2,0
+  belongs_to :useruser=2,0
+  belongs_to :userbuild_user2,0
+  belongs_to :usercreate_user2,0
+  belongs_to :usercreate_user!2,0
+  belongs_to :bookbook3,0
+  belongs_to :bookbook=3,0
+  belongs_to :bookbuild_book3,0
+  belongs_to :bookcreate_book3,0
+  belongs_to :bookcreate_book!3,0
+  scope :ordered_by_score, -> {order(score: :desc)}ordered_by_score9,0
+
+app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord1,0
+
+app/models/user.rb,435
+class User < ApplicationRecordUser1,0
+  has_many :ratingsratings2,0
+  has_many :ratingsratings=2,0
+  has_many :ratingsrating_ids2,0
+  has_many :ratingsrating_ids=2,0
+  has_many :books, through: :ratingsbooks3,0
+  has_many :books, through: :ratingsbooks=3,0
+  has_many :books, through: :ratingsbook_ids3,0
+  has_many :books, through: :ratingsbook_ids=3,0
+  def self.create_from_omniauth(auth)create_from_omniauth6,0
+
+app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob1,0
+
+app/controllers/application_controller.rb,79
+class ApplicationController < ActionController::BaseApplicationController1,0
+
+app/controllers/ratings_controller.rb,365
+class RatingsController < ApplicationControllerRatingsController1,0
+  def indexindex5,0
+  def showshow13,0
+  def newnew16,0
+  def createcreate25,0
+  def editedit39,0
+  def updateupdate43,0
+  def destroydestroy53,0
+  def rating_paramsrating_params62,0
+  def redirect_if_not_logged_inredirect_if_not_logged_in66,0
+  def set_ratingset_rating72,0
+
+app/controllers/users_controller.rb,266
+class UsersController < ApplicationControllerUsersController1,0
+  def newnew5,0
+  def createcreate11,0
+  def showshow21,0
+  def omniauthomniauth27,0
+  def user_paramsuser_params40,0
+  def require_user_accessrequire_user_access44,0
+  def authauth52,0
+
+app/controllers/sessions_controller.rb,226
+class SessionsController < ApplicationControllerSessionsController1,0
+  def welcomewelcome4,0
+  def destroydestroy7,0
+  def createcreate12,0
+  def destroydestroy23,0
+  def omniauthomniauth28,0
+  def authauth42,0
+
+app/controllers/books_controller.rb,233
+class BooksController < ApplicationControllerBooksController1,0
+  def newnew3,0
+  def createcreate8,0
+  def indexindex17,0
+  def showshow21,0
+  def editedit25,0
+  def updateupdate29,0
+  def book_paramsbook_params37,0
+
+app/helpers/books_helper.rb,35
+module BooksHelperBooksHelper1,0
+
+app/helpers/users_helper.rb,35
+module UsersHelperUsersHelper1,0
+
+app/helpers/ratings_helper.rb,90
+module RatingsHelperRatingsHelper1,0
+  def rating_form_header(f)rating_form_header2,0
+
+app/helpers/sessions_helper.rb,41
+module SessionsHelperSessionsHelper1,0
+
+app/helpers/application_helper.rb,117
+module ApplicationHelperApplicationHelper1,0
+  def current_usercurrent_user24,0
+  def logged_in?logged_in?37,0
+
+app/channels/application_cable/connection.rb,195
+module ApplicationCableApplicationCable1,0
+  class Connection < ActionCable::Connection::BaseConnection2,0
+  class Connection < ActionCable::Connection::BaseApplicationCable::Connection2,0
+
+app/channels/application_cable/channel.rb,177
+module ApplicationCableApplicationCable1,0
+  class Channel < ActionCable::Channel::BaseChannel2,0
+  class Channel < ActionCable::Channel::BaseApplicationCable::Channel2,0
+
+test/models/rating_test.rb,58
+class RatingTest < ActiveSupport::TestCaseRatingTest3,0
+
+test/models/book_test.rb,54
+class BookTest < ActiveSupport::TestCaseBookTest3,0
+
+test/models/user_test.rb,54
+class UserTest < ActiveSupport::TestCaseUserTest3,0
+
+test/application_system_test_case.rb,95
+class ApplicationSystemTestCase < ActionDispatch::SystemTestCaseApplicationSystemTestCase3,0
+
+test/test_helper.rb,101
+class ActiveSupport::TestCaseTestCase5,0
+class ActiveSupport::TestCaseActiveSupport::TestCase5,0
+
+test/controllers/users_controller_test.rb,84
+class UsersControllerTest < ActionDispatch::IntegrationTestUsersControllerTest3,0
+
+test/controllers/books_controller_test.rb,84
+class BooksControllerTest < ActionDispatch::IntegrationTestBooksControllerTest3,0
+
+test/controllers/sessions_controller_test.rb,90
+class SessionsControllerTest < ActionDispatch::IntegrationTestSessionsControllerTest3,0
+
+test/controllers/ratings_controller_test.rb,88
+class RatingsControllerTest < ActionDispatch::IntegrationTestRatingsControllerTest3,0
+
+test/channels/application_cable/connection_test.rb,206
+class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCaseConnectionTest3,0
+class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCaseApplicationCable::ConnectionTest3,0
+
+config/application.rb,158
+module BookStoreBookStore9,0
+  class Application < Rails::ApplicationApplication10,0
+  class Application < Rails::ApplicationBookStore::Application10,0
+
+db/migrate/20210228055148_create_ratings.rb,93
+class CreateRatings < ActiveRecord::Migration[6.1]CreateRatings1,0
+  def changechange2,0
+
+db/migrate/20210224205921_create_books.rb,89
+class CreateBooks < ActiveRecord::Migration[6.1]CreateBooks1,0
+  def changechange2,0
+
+db/migrate/20210224205134_create_users.rb,89
+class CreateUsers < ActiveRecord::Migration[6.1]CreateUsers1,0
+  def changechange2,0

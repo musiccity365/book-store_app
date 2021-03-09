@@ -1,5 +1,10 @@
 <h1>All Ratings</h1>
 
+<% if @book %>
+  <%= link_to 'New Rating', new_book_rating_path(@book) %>
+<% else %>
+  <%= link_to 'New Rating', new_rating_path %>
+<% end %>
 <ul>
 <% @ratings.each do |rating| %>
   Rating Title: <%= link_to rating.title, rating_path(rating.id) %><br>
@@ -8,8 +13,3 @@
   Score: <%= rating.score %><br><br>
 <% end %>
 </ul>
-<% if @book %>
-  <%= link_to 'New Rating', new_book_rating_path(@book) %>
-<% else %>
-  <%= link_to 'New Rating', new_rating_path %>
-<% end %>
