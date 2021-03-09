@@ -11,9 +11,17 @@
   </head>
 
   <body>
-  
-
-    <%= nav_bar %>
+    <%= link_to("Books", books_path) %>
+    <%= link_to("Create a Book", new_book_path) %>
+    <%= button_to('Log in with GitHub', '/auth/github')%>
+    <%= link_to("All Ratings", ratings_path) %>
+    <%= link_to("Log out", '/logout', method: 'delete')%>
+      <hr>
+      
+      <% if flash[:message] %>
+        <div class="field_with_errors"><%= flash[:message] %></div>
+      <% end %>
+      
     <%= yield %>
   </body>
 </html>
