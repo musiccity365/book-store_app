@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create, :home]
+  skip_before_action :require_login, only: [:new, :create, :welcome]
 
-  def home
+  def welcome
   end
 
   def destroy

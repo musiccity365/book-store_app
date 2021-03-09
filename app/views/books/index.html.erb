@@ -2,10 +2,10 @@
 <%= link_to "Create a Book", new_book_path %> 
 <% @books.each do |book| %>
   <ol>
-    <%= link_to book.title, book %>
-    <%= book.author %>
-    <%= book.publisher %>
-    <%= book.genre %>
-    <%= book.release_year %>
+    <%= link_to book.title, book %><br>
+    <%= book.author %><br>
+    <%= book.publisher %><br>
+    <%= book.genre %><br>
+    <%= book.release_year %><br>
   </ol>
 <% end %>

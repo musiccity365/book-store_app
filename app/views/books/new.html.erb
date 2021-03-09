@@ -21,16 +21,7 @@
   <%= f.label :genre %>
   <%= f.text_field :genre %><br>
   <%= f.label :release_year %>
-  <%= f.text_field :release_year %>
-    <h2>New Book Rating</h2>
-  <%= f.fields_for :ratings do |r| %>
-    <%= r.label "Rating Title:"%><br>
-    <%= r.text_field :title %><br>
-    <%= r.label "Rating Score:"%><br>
-    <%= r.number_field :score %><br>
-    <%= r.label "Content:" %><br>
-    <%= r.text_area :content %><br>
-  <% end %>
+  <%= f.text_field :release_year %><br>
   <%= f.submit %>
 
 <% end %>

@@ -4,6 +4,7 @@
 <% @ratings.each do |rating| %>
   Rating Title: <%= link_to rating.title, rating_path(rating.id) %><br>
   Book Info: <%= link_to rating.book.title, book_path(rating.book_id) %><br>
+  Rating Author: <%= rating.user.username %><br>
   Score: <%= rating.score %><br><br>
 <% end %>
 </ul>

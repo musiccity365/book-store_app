@@ -5,9 +5,9 @@ class RatingsController < ApplicationController
 
   def index
     if params[:book_id] && @book = Book.find_by_id(params[:book_id])
-      @ratings = @book.ratings
+      @ratings = @book.ratings.ordered_by_score
     else
-      @ratings = Rating.all
+      @ratings = Rating.all.ordered_by_score
     end
   end
 
