@@ -10,14 +10,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(username: params[:user][:username])
-    if user && user.authenticate(params[:user][:password])
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
-      flash[:message] = "Incorrect credentials, please try again!"
-      redirect_to "/login"
+      flash[:message] = "Invalid credentials, please try again!"
+      redirect_to '/login'
     end
+  end
+  
+  def destroy
+    session.delete(:user_id)
+    redirect_to '/login'
   end
 
   def omniauth

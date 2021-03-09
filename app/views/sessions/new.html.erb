@@ -1,9 +1,10 @@
-<h1>User Login</h1>
-<%= form_for :user do |f| %>
+<h1>Login Here!</h1>
+<%= form_with(url: '/login') do |f|%>
   <%= f.label :username %>
-  <%= f.text_field :username %><br>
+  <%= f.text_field :username %><br><br>
   <%= f.label :password %>
-  <%= f.password_field :password %><br>
+  <%= f.password_field :password %><br><br>
+  
   <%= f.submit "login" %>
 <% end %>
 
