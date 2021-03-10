@@ -1,21 +1,19 @@
 <h1>Welcome <%= @user.name %></h1>
 
-Username: <%= @user.username %><br>
+Username: <%= current_user.username %><br>
 Email: <%= @user.email %><br>
 
 Ratings: <%= @user.ratings.count %>
 
+<br><br>
+
 <% @user.ratings.each do |rating| %>
-    <ul>
-        <li>
-            <h3><%= rating.title %></h3>
-            <br>
-            <%= rating.book.title %>
-            <br>
-            <%= rating.content %>
-            <br>
-            <small><%= rating.timestamps %></small>
-        </li>
-        ----------------------------------------------
-    </ul>
+    <br><br>
+    <b>Rating Title:</b> <%= rating.title %>
+    <br>
+    <b>Book Title:</b> <%= rating.book.title %>
+    <br>
+    <b>Content: </b> <%= rating.content %>
+    <br>
+    ----------------------------------------------
 <% end %>

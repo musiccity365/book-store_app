@@ -11,11 +11,17 @@
   </head>
 
   <body>
-    <%= link_to("Books", books_path) %>
-    <%= link_to("Create a Book", new_book_path) %>
-    <%= button_to('Log in with GitHub', '/auth/github')%>
-    <%= link_to("All Ratings", ratings_path) %>
-    <%= link_to("Log out", '/logout', method: 'delete')%>
+     <div class="wrapper">
+      <% if logged_in? %>
+        <div align="left">
+          <%= link_to("Books", books_path) %>
+          <%= link_to("Create a Book", new_book_path) %>
+          <%= link_to("All Ratings", ratings_path) %>
+          <%= link_to("Log out", '/logout', method: 'delete')%>
+        </div>
+      <% end %>
+        
+
       <hr>
       
       <% if flash[:message] %>

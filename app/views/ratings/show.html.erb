@@ -1,7 +1,7 @@
 <h1><%= @rating.book.title %></h1>
 
 <div>
-  By: <%= @rating.user.name %><br>
+  By: <%= @rating.user[:username] %><br>
   Title: <%= @rating.title %><br>
   Score: <%= @rating.score %><br>
   Content: <p><%= @rating.content %></p>
