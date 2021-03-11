@@ -43,9 +43,9 @@ class UsersController < ApplicationController
   
   def require_user_access
     user = User.find_by(id: params[:id])
-    unless user && current_user.id == user.id
+    unless current_user == user
       flash[:error] = "Sorry, Access Denied."
-      redirect_to user_path(current_user)
+      redirect_to user_path(user)
     end
   end
   
