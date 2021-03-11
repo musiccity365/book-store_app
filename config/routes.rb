@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
 
   #logout route
-  # get '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
 
 
   resources :ratings

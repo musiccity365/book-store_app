@@ -11,22 +11,8 @@
   </head>
 
   <body>
-     <div class="wrapper">
-      <% if logged_in? %>
-        <div align="left">
-          <%= link_to("Books", books_path) %>
-          <%= link_to("Create a Book", new_book_path) %>
-          <%= link_to("All Ratings", ratings_path) %>
-          <%= link_to("Log out", '/logout', method: 'delete')%>
-        </div>
-      <% end %>
-        
-
-      <hr>
+     <%= nav_bar %>
       
-      <% if flash[:message] %>
-        <div class="field_with_errors"><%= flash[:message] %></div>
-      <% end %>
       
     <%= yield %>
   </body>

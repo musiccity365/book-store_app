@@ -4,6 +4,11 @@ class SessionsController < ApplicationController
   def welcome
   end
 
+  def destroy
+    session.clear
+    redirect_to root_path
+  end
+  
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password]) # authenticate method comes from has_secure_password

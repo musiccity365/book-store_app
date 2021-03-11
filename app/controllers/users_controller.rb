@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_access, only: [:edit, :update, :show]
+  # before_action :require_user_access, only: [:edit, :update, :show]
   # skip_before_action :require_login, only: [:new, :omniauth, :create]
 
   def new
