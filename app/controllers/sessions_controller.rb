@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.clear
+    session.delete(:user_id)
     redirect_to root_path
   end
   
@@ -18,11 +18,6 @@ class SessionsController < ApplicationController
       flash[:message] = "Invalid credentials, please try again!"
       redirect_to '/login'
     end
-  end
-  
-  def destroy
-    session.delete(:user_id)
-    redirect_to '/login'
   end
 
   def omniauth
