@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Thu Mar 11 2021 20:14:24 GMT-0500 (Eastern Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/controllers/sessions_controller.rb
+* app/controllers/users_controller.rb
+* app/helpers/application_helper.rb
+
+
+Created files:
+* .autogit/logs/log-11-2-2021-19-44-15.txt
+
+
+Deleted files:
+
+
+Renamed files:
