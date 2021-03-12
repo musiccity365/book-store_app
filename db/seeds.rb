@@ -24,8 +24,3 @@ Book.create(
         {name: "grace", username: "grace50", email: "gracey@optonline.net", password: "password3"}
       ]
     )
-  # Rating.create(
-  #     [
-  #       {comment: , score: , book_id: , user_id: }
-  #     ]
-  # )
