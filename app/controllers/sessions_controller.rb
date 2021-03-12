@@ -1,26 +1,23 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create, :welcome]
+  # skip_before_action :require_login, only: [:new, :create, :welcome]
 
-  def new
+  def welcome
   end
 
   def destroy
     session.clear
     redirect_to root_path
   end
-
+  
   def create
-    user = User.find_by(params[:username] || params[:email])
+    user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password]) # authenticate method comes from has_secure_password
       session[:user_id] = user.id # logs in a user
       redirect_to user_path(user)
     else
       flash[:message] = "Invalid credentials, please try again!"
-      redirect_to '/welcome'
+      redirect_to '/login'
     end
-  end
-
-  def welcome
   end
   
   def destroy

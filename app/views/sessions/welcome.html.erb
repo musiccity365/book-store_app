@@ -1,6 +1,15 @@
-<h1>Welcome</h1>
-<% if logged_in? %>
-    <h1>You are Logged In, <%= current_user.username %></h1>
-<%end%>
-<%= button_to "Login", '/login', method: :get%>
-<%= button_to "Sign Up", '/users/new', method: :get%>
+<h1>Home Page</h1>
+
+<p>
+<% if !current_user %>
+    <%= link_to "Sign Up", signup_path %>
+    <p>
+    <%= link_to "Login", '/login' %>
+    <p>
+    <%= button_to("Log In with Github", '/auth/github')%>
+<% else %>
+    <%= link_to "All Ratings", ratings_path %>
+    <p>
+    <%= link_to "All Books", books_path %>
+    <p>
+<% end %>

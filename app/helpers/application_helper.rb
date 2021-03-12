@@ -1,12 +1,16 @@
 module ApplicationHelper
   # gives access to the views
-  # before_action :authorized
-  helper_method :current_user, :logged_in?
+  # helper_method :current_user, :logged_in?
+  # before_action :require_login
+  
 
-  def authorized
-    redirect_to '/welcome' unless logged_in?
+  
+  def require_login
+      unless logged_in?
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to login_path
+      end
   end
-
   def nav_bar
     menu = ''
     if logged_in?
@@ -17,7 +21,6 @@ module ApplicationHelper
     end
     menu.html_safe
   end
-
   def current_user
       #we don't use @user because it might override the user
       # variable in the controller
@@ -32,7 +35,7 @@ module ApplicationHelper
   end
     
   def logged_in?
-    !!current_user
+      !!current_user
   end
 
 end
