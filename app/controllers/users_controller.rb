@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-  # before_action :require_user_access, only: [:edit, :update, :show]
-  # skip_before_action :require_login, only: [:new, :omniauth, :create]
+  skip_before_action :authorized, only: [:new, :omniauth, :create]
 
   def new
     @user = User.new
   end
 
-  
+
   
   def create
     @user = User.new(user_params)
@@ -40,7 +39,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
-  
+
   def require_user_access
     user = User.find_by(id: params[:id])
     unless current_user == user

@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Thu Mar 11 2021 19:44:15 GMT-0500 (Eastern Standard Time)
+------------------------------------------------------
+
+Modified files:
+* .DS_Store
+* Gemfile.lock
+* app/controllers/sessions_controller.rb
+* app/helpers/application_helper.rb
+* app/views/sessions/welcome.html.erb
+* db/seeds.rb
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
