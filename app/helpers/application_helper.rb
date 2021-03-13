@@ -2,7 +2,7 @@ module ApplicationHelper
   # gives access to the views
   # helper_method :current_user, :logged_in?
   # before_action :require_login
-  
+
 
   
   def require_login
