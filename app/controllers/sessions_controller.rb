@@ -13,6 +13,9 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password]) # authenticate method comes from has_secure_password
       session[:user_id] = user.id # logs in a user
+
+      binding.pry
+      
       redirect_to user_path(user)
     else
       flash[:message] = "Invalid credentials, please try again!"

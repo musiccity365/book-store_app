@@ -28,8 +28,9 @@ gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'omniauth', '~> 1.9', '>= 1.9.1'
 #Omniauth Github OAuth Login
+gem 'omniauth', '~> 1.9', '>= 1.9.1'
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github', '~> 1.4'
 gem 'dotenv-rails'
 

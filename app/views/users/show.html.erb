@@ -8,11 +8,11 @@ Ratings: <%= @user.ratings.count %>
 
 <% @user.ratings.each do |rating| %>
     <br><br>
-    <b>Rating Title:</b> <%= rating.title %>
+    <b>Rating Title:</b> <%= link_to rating.title, rating_path(rating.id) %>
     <br>
-    <b>Book Title:</b> <%= rating.book.title %>
+    <b>Book Title:</b> <%= link_to rating.book.title, book_path(rating.book_id) %>
     <br>
     <b>Content: </b> <%= rating.content %>
-    <br>
-    ----------------------------------------------
+    <br><br>
+    -------------------------------------------------------------------------------------------------------
 <% end %>
