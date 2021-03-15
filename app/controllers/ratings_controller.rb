@@ -1,7 +1,6 @@
 class RatingsController < ApplicationController
   before_action :set_rating, :redirect_if_not_logged_in
   before_action :set_rating, :require_user_access, only: [:edit, :update, :destroy]
-  
 
   def index
     if params[:book_id] && @book = Book.find_by_id(params[:book_id])
@@ -47,14 +46,15 @@ class RatingsController < ApplicationController
       @rating = Rating.find(params[:id])
       @rating.update(rating_params)
       flash[:success] = "Updated!"
-      redirect_to ratings_path(@rating)
+      redirect_to rating_path(@rating)
     else
+      flash[:message] = @rating.errors.full_messages.join(", ")
       render action: :edit
     end
   end
 
   def destroy
-    @rating = @current_user.ratings.find(params[:id])
+    @rating = current_user.ratings.find(params[:id])
     @rating.destroy
     redirect_to ratings_path
     flash[:notice] = "Deleted!"
@@ -65,20 +65,17 @@ class RatingsController < ApplicationController
   def rating_params
     params.require(:rating).permit(:title, :content, :score, :book_id, :user_id) 
   end
-  
   def require_user_access
     unless @current_user == @rating.user
       flash[:error] = "Sorry, Access Denied."
       redirect_to user_path(current_user)
     end
   end
-  
   def set_rating
     @rating = Rating.find_by(id: params[:id])
   end
-  
   def redirect_if_not_logged_in
-      redirect_to '/' if !logged_in?
+    redirect_to '/' if !logged_in?
   end
 
 end

@@ -1,5 +1,5 @@
 <h1> Books Index </h1>
-<%= link_to "Create a Book", new_book_path %> 
+<%= link_to "Create a Book", new_book_path %>
 <% @books.each do |book| %>
   <ol>
     Title: <%= link_to book.title, book %><br>

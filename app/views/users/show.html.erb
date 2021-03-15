@@ -1,18 +1,20 @@
-<h1>Welcome <%= @user.name %></h1>
-Username: <%= @user.username %><br>
-Email: <%= @user.email %><br>
+<h1>Welcome <%= current_user.name %></h1>
+Username: <%= current_user.username %><br>
+Email: <%= current_user.email %><br>
 
-Ratings: <%= @user.ratings.count %>
+Ratings: <%= current_user.ratings.count %>
 
 <br><br>
 
-<% @user.ratings.each do |rating| %>
+<% current_user.ratings.ordered_by_score.each do |rating| %>
     <br><br>
     <b>Rating Title:</b> <%= link_to rating.title, rating_path(rating.id) %>
     <br>
     <b>Book Title:</b> <%= link_to rating.book.title, book_path(rating.book_id) %>
     <br>
     <b>Content: </b> <%= rating.content %>
+    <br>
+    <b>Rating Score: </b> <%= rating.score %>
     <br><br>
     -------------------------------------------------------------------------------------------------------
 <% end %>
