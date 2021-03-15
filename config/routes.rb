@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   root "sessions#welcome"
   #omniauth callback route
-  # get '/auth/github/callback', to: 'sessions#omniauth'
+  # get '/auth/github/callback', to: 'sessions#omniauth'lab
   match '/auth/github/callback', to: 'users#omniauth', via: [:get, :post]
   # get 'sessions/home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
