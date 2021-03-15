@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   #homepage route
-  get '/login' => 'sessions#new'
   root "sessions#welcome"
   #omniauth callback route
   # get '/auth/github/callback', to: 'sessions#omniauth'lab
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
 
   #login route
+  get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 

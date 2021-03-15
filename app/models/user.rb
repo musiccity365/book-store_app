@@ -3,7 +3,6 @@ class User < ApplicationRecord
   has_many :books, through: :ratings
   has_secure_password
   validates :email, presence: true
-  validates :password, presence: true
 
   def self.create_from_omniauth(auth)
       User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
