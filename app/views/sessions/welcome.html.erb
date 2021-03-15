@@ -1,15 +1,15 @@
 <h1>Home Page</h1>
 
 <p>
-<% if !current_user %>
-    <%= link_to "Sign Up", signup_path %>
-    <p>
-    <%= link_to "Login", '/login' %>
-    <p>
-    <%= button_to("Log In with Github", '/auth/github')%>
-<% else %>
+<% if current_user %>
     <%= link_to "All Ratings", ratings_path %>
     <p>
     <%= link_to "All Books", books_path %>
+<% else %>
+    <%= link_to "Sign Up", signup_path %>
+    <p>
+    <%= link_to "Login", login_path %>
+    <p>
+    <%= button_to("Log In with Github", '/auth/github')%>
     <p>
 <% end %>

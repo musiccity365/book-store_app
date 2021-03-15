@@ -33,7 +33,6 @@ class RatingsController < ApplicationController
       @book = Book.find_by_id(params[:book_id]) if params[:book_id]
       @books = Book.book_list
       flash[:message] = @rating.errors.full_messages.join(", ")
-
       render :new
     end
   end
