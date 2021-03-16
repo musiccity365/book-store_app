@@ -8,13 +8,13 @@ Ratings: <%= current_user.ratings.count %>
 
 <% current_user.ratings.ordered_by_score.each do |rating| %>
     <br><br>
-    <b>Rating Title:</b> <%= link_to rating.title, rating_path(rating.id) %>
+    <b>Rating Title:</b> <%= rating.title %>
     <br>
     <b>Book Title:</b> <%= link_to rating.book.title, book_path(rating.book_id) %>
     <br>
     <b>Content: </b> <%= rating.content %>
     <br>
-    <b>Rating Score: </b> <%= rating.score %>
+    <b>Rating Score: </b> <%= link_to rating.score, rating_path(rating.id) %>
     <br><br>
     -------------------------------------------------------------------------------------------------------
 <% end %>

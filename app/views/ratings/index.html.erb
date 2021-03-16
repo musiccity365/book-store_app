@@ -8,11 +8,11 @@
 <ul>
 <br>
 <% @ratings.each do |rating| %>
-  Rating Title: <%= link_to rating.title, rating_path(rating.id) %><br>
+  Rating Title: <%= rating.title %><br>
   Book Info: <%= link_to rating.book.title, book_path(rating.book_id) %><br>
   Rating Author: <%= rating.user.username %><br>
-  Score: <%= rating.score %><br><br>
+  Rating Score: </b> <%= link_to rating.score, rating_path(rating.id) %><br>
 -------------------------------------------------------------------------------------------------------
-<br><br>
+<br>
 <% end %>
 </ul>
