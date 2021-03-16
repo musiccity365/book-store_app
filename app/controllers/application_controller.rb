@@ -3,9 +3,7 @@ class ApplicationController < ActionController::Base
   # gives access to the views
   helper_method :current_user, :logged_in?
   before_action :require_login
-  
-  
-  
+
   def require_login
       unless logged_in?
         flash[:error] = "You must be logged in to access this section"
@@ -16,7 +14,6 @@ class ApplicationController < ActionController::Base
   def current_user
       #we don't use @user because it might override the user
       # variable in the controller
-    
       # 1. if there is a session[:user_id] proceed..
       # ....(we don't want to make a call to the database
       # & not find anything)
@@ -25,7 +22,7 @@ class ApplicationController < ActionController::Base
       # to @current_user.
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
-  
+
   def logged_in?
       current_user
   end

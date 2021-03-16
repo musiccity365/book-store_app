@@ -16,13 +16,13 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     # redirect_if_not_logged_in
     @user = User.find_by_id(params[:id])
     redirect_to '/' if !@user
   end
-  
+
   def omniauth
     #find or create a user using the attributes auth
     user = User.create_from_omniauth(auth)
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       redirect_to login_path
     end
   end
-  
+
   private
   def user_params
     params.require(:user).permit(:name, :username, :email, :password)
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
     end
   end
-  
+
   def auth
     request.env['omniauth.auth']
   end
