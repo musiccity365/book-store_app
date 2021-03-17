@@ -1,0 +1,25 @@
+<% if @book %>
+  <ul>
+  <br>
+  <% @book.ratings.each do |rating| %>
+    Rating Title: <%= rating.title %><br>
+    Book Info: <%= link_to rating.book.title, book_path(rating.book_id) %><br>
+    Rating Author: <%= rating.user.username %><br>
+    Rating Score: </b> <%= link_to rating.score, rating_path(rating.id) %><br>
+  -------------------------------------------------------------------------------------------------------
+  <br>
+  <% end %>
+  </ul>
+<% else %>
+  <ul>
+  <br>
+  <% @ratings.each do |rating| %>
+    Rating Title: <%= rating.title %><br>
+    Book Info: <%= link_to rating.book.title, book_path(rating.book_id) %><br>
+    Rating Author: <%= rating.user.username %><br>
+    Rating Score: </b> <%= link_to rating.score, rating_path(rating.id) %><br>
+  -------------------------------------------------------------------------------------------------------
+  <br>
+  <% end %>
+  </ul>
+<% end %>
