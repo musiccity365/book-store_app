@@ -28,9 +28,6 @@ Rails.application.routes.draw do
   resources :books do
     resources :ratings, only: [:index, :new, :create]
   end
-  # resources :genres do
-  #   resources :books, only: [:index]
-  # end
-  resources :books, only: [:index, :show, :new]
+
 
 end

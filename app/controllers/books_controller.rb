@@ -18,6 +18,9 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    if @book.nil?
+      redirect_to :action => :index
+    end
   end
 
   def edit

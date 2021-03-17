@@ -11,11 +11,10 @@ Genre: <%= @book.genre %><br>
 
 Released: <%= @book.release_year %><br><br>
 
-<%= link_to "Create New Rating", new_book_rating_path(@book) %>
-
-<%= link_to "View Ratings", book_ratings_path(@book) %>
-
-
+<h1>New rating</h1>
+<%= render 'error' %>
+<%= render 'frame' %>
 
 
-
+<h1>ratings</h1>
+<%= render partial: "rating", collection: @ratings %>
