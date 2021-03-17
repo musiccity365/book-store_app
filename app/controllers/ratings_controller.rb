@@ -1,6 +1,6 @@
 class RatingsController < ApplicationController
   before_action :set_rating, :redirect_if_not_logged_in
-  before_action :set_rating, :require_user_access, only: [:new, :edit, :update, :destroy]
+  before_action :set_rating, :require_user_access, only: [:edit, :update, :destroy]
 
   def index
     if params[:book_id] && @book = Book.find_by_id(params[:book_id])
@@ -27,7 +27,7 @@ class RatingsController < ApplicationController
     @rating = current_user.ratings.build(rating_params)
     @rating.book_id = params[:book_id] || @rating.book_id = params[:rating][:book_id]
     if @rating.save
-      redirect_to rating_path(@rating)
+      redirect_to book_path(@rating.book)
     else
       @book = Book.find_by_id(params[:book_id]) if params[:book_id]
       @books = Book.book_list

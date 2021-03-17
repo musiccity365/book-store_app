@@ -13,7 +13,7 @@ Released: <%= @book.release_year %><br><br>
 
 <h2>New Rating</h2>
 
-<%= form_for(new_book_rating_path(@book)) do |f| %>
+<%= form_for([@book, @rating]) do |f| %>
   <%= f.label "Rating Title:"%>
   <%= f.text_field :title %><br><br>
 

@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   #homepage route
   root "sessions#welcome"
   #omniauth callback route
-  # get '/auth/github/callback', to: 'sessions#omniauth'lab
   match '/auth/github/callback', to: 'users#omniauth', via: [:get, :post]
-  # get 'sessions/home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   #signup route
@@ -23,11 +21,9 @@ Rails.application.routes.draw do
 
 
   resources :ratings
-  # resources :users
 
   resources :books do
     resources :ratings, only: [:index, :new, :create]
   end
-
 
 end

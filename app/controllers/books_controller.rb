@@ -18,6 +18,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @rating = Rating.new
+
     if @book.nil?
       redirect_to :action => :index
     end
