@@ -1,6 +1,5 @@
 <% if @book %>
   <ul>
-  <br>
   <% @book.ratings.each do |rating| %>
     Rating Title: <%= rating.title %><br>
     Book Info: <%= link_to rating.book.title, book_path(rating.book_id) %><br>

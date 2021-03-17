@@ -1,6 +1,6 @@
 class RatingsController < ApplicationController
   before_action :set_rating, :redirect_if_not_logged_in
-  before_action :set_rating, :require_user_access, only: [:edit, :update, :destroy]
+  before_action :set_rating, :require_user_access, only: [:new, :edit, :update, :destroy]
 
   def index
     if params[:book_id] && @book = Book.find_by_id(params[:book_id])
